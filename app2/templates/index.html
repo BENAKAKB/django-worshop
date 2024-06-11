@@ -1,0 +1,83 @@
+<html>
+<head>
+    <style>
+        /* Container style */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header style */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Style for the form */
+        .my-form {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        
+        /* Form header style */
+        .form-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Style for form labels */
+        .my-form label {
+            font-weight: bold;
+        }
+    
+        /* Style for form inputs */
+        .my-form .form-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensures padding is included in width */
+            font-size: 16px;
+        }
+    
+        /* Style for the submit button */
+        .my-form .submit-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    
+        /* Style for the paragraph below the form */
+        .form-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Your Form Header</h1>
+        </div>
+
+        <form method="POST" class="my-form">
+            <div class="form-header">
+                <h2>Form Sub-Header</h2>
+            </div>
+
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+        <p class="form-info">{{param1}}</p>
+    </div>
+</body>
+</html>
